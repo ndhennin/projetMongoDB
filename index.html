@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>MongoDB &mdash; Gorteau Dhennin</title>
+    <meta name="description" content="Projet mongoDB, Visualisation, Gorteau et Dhennin">
+    
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400, 600, 700" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+    
+    
+    <link rel="stylesheet" href="assets/css/slick.css">
+
+    <link rel="stylesheet" href="assets/css/helpers.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/restaurant.css">
+  </head>
+  <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+    
+
+    <div class="probootstrap-loader"></div>
+    <!-- END loader -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
+      <div class="container">
+        <a class="navbar-brand d-xl-none d-lg-none d-md-block d-sm-block" href="/">
+          <img src="assets/images/restaurant/logo-whitee.png" alt="Instant Logo" class="light">
+          <img src="assets/images/restaurant/logo-darkk.png" alt="Instant Logo" class="dark">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="ion-navicon"></i></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-md-center" id="probootstrap-navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-about">Cadre</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-bases">Bases MongoDB</a></li>
+            <li class="nav-item logo-center d-xl-block d-lg-block d-md-none d-sm-none d-none">
+              <a class="nav-link text-uppercase pb_letter-spacing-2" href="index.html">
+                <img src="assets/images/restaurant/logo-whitee.png" alt="Instant Logo" class="light">
+                <img src="assets/images/restaurant/logo-darkk.png" alt="Instant Logo" class="dark">
+              </a>
+            </li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-visualisation">Visualisations</a></li>
+            <li class="nav-item"><a class="nav-link text-uppercase pb_letter-spacing-2" href="#section-analyses">Analyse</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="pb_cover_v1 cover-bg-black cover-bg-opacity-4 text-center" style="background-image: url(assets/images/restaurant/1900x1200/data1.png)" id="section-home">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-9  order-md-1">
+            <h2 class="heading mb-3">Visualisation de données issues de bases MongoDB</h2>
+            <div class="sub-heading"><p class="mb-5">L'étude de ce projet a pour but de visualiser 3 bases de données différentes interrogées via des requêtes MongoDB.</p></div>
+            <p><a href="#section-visualisation" role="button" class="btn smoothscroll pb_outline-light rounded-0 btn-xl pb_font-13 pb_letter-spacing-2 p-3">Voir les visualisations</a></p>
+          </div>  
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+    <section class="pb_section" id="section-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mb-5">
+            <div class="row">
+              <div class="col">
+                <p><img src="assets/images/restaurant/800x975/mongoDB.jpg" alt="Instant Image" class="img-fluid"></p>
+              </div>
+              <div class="col">
+                <p><img src="assets/images/restaurant/800x975/r_pythonn.png" alt="Instant Image" class="img-fluid"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 pl-lg-5 pl-lg-0">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Mise en oeuvre de l'étude</h2>
+            <p>Les bases MongoDB permettent des études précises et consises des données via différents langages tels que R ou encore Python. </p>
+
+            <p>Le cadre de notre étude est de visualiser certaines modalités de différentes bases MongoDB utilisant ces deux langages.</p>
+            <p><a href="#section-bases" class="smoothscroll text-danger text-uppercase"> Voir les bases de données <i class="ion-arrow-down-c"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="pb_section" id="section-bases">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Bases MongoDB</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+
+            <ul class="nav justify-content-center pb_tab_v1">
+              <li class="nav-item">
+                <a class="nav-link active p-3" data-toggle="list" href="#covid19" role="tab">Centres de vaccination Covid19</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3" data-toggle="list" href="#publications" role="tab">Publications scientifiques</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3" data-toggle="list" href="#NYfood" role="tab">Données issues de NYfood</a>
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="covid19" role="tabpanel">
+                <h4 class="col text-center">La base <b>doctolib</b> contient des informations, récupérées en janvier 2022, relatives aux centres de vaccination contre la Covid19 en Bretagne.</h4>
+              <br/>
+                <div class="row">
+                  <div class="col-lg-3">
+                    <p><img src="assets/images/restaurant/800x975/doctolib.PNG" alt="Instant Image" class="img-fluid"></p>
+                  </div>
+                  <div class = "col-lg-3">
+                    <p><img src="assets/images/restaurant/800x975/doctolib2.PNG" alt="Instant Image" class="img-fluid"></p>
+                  </div>
+                  
+                  <div class="col">
+                    <ul class="list-unstyled pb_food-menu">
+                      <li>
+                        <div class="row">
+                          <div class="col">
+                            <h3 class="pb_font-18 font-weight-bold">5 éléments identifiant un individu</h3>
+                            <p class="mb-0"> <i><b>"_id"</b></i> : identifiant unique permettant d'identifier la personne venant au centre de vaccination</p>
+                            <p class="mb-0"><i><b>"name"</b></i> : nom du centre de vaccination</p>
+                            <p class="mb-0"><i><b>"url_doctolib"</b></i> : url du site doctolib utilisé</p>
+                            <p class="mb-0"><i><b>"location"</b></i> : identifie la longitude et la latitude du centre de vaccination</p>
+                            <p class="mb-0"><i><b>"visit_motives"</b></i> : raisons de la visite (type de vaccination, 1ère injection, etc)</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="row">
+                          <div class="col">
+                            <h3 class="pb_font-18 font-weight-bold">Visualisation : via R/Python</h3>
+                            <p class="mb-0"> Avec R/Python depuis cette base, nous allons générer une carte des centres de vaccination situés à moins de 50km de Rennes.</p>
+                          </div>
+                        </div>
+                      </li>
+                                    
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="publications" role="tabpanel">
+                <h4 class="col text-center">La base <b>publications</b> contient les informations relatives aux publications de scientifiques du laboratoire IRISA pour l’année 2021 (extraites du service HAL).</h4>
+                  <br/>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <p><img src="assets/images/restaurant/800x975/publications.PNG" alt="Instant Image" class="img-fluid"></p>
+                      </div>
+                      <div class = "col-lg-3">
+                        <p><img src="assets/images/restaurant/800x975/publications2.PNG" alt="Instant Image" class="img-fluid"></p>
+                      </div>
+                      
+                      <div class="col">
+                        <ul class="list-unstyled pb_food-menu">
+                          <li>
+                            <div class="row">
+                              <div class="col">
+                                <h3 class="pb_font-18 font-weight-bold">6 éléments identifiant une publication scientifique</h3>
+                                <p class="mb-0"> <i><b>"_id"</b></i> : identifiant unique permettant d'identifier la publication scientifique</p>
+                                <p class="mb-0"><i><b>"halld"</b></i> : ??</p>
+                                <p class="mb-0"><i><b>"uri"</b></i> : url du site ??</p>
+                                <p class="mb-0"><i><b>"title"</b></i> : titre de la publication</p>
+                                <p class="mb-0"><i><b>"conferenceTitle"</b></i> : nom de la conférence où ??</p>
+                                <p class="mb-0"><i><b>"authors"</b></i> : nom des différents auteurs de la publication</p>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col">
+                                <h3 class="pb_font-18 font-weight-bold">Visualisation : via R/Python</h3>
+                                <p class="mb-0"> Avec R/python, nous allons repérer les liens entre les auteurs de ces publications, en les distinguant par leurs nombres de publications et en représentant les liens (co-publications) existant entre les auteurs.
+                                   On se focalisera sur les 20 auteurs les plus prolifiques (i.e. qui ont participé à l’écriture du plus grand nombre d’articles).</p>
+                              </div>
+                            </div>
+                          </li>
+                                        
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+              <div class="tab-pane fade" id="NYfood" role="tabpanel">
+                <h4 class="col text-center">La base <b>food</b> contient des informations relatives à des restaurants de New-York.</h4>
+                  <br/>
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <p><img src="assets/images/restaurant/800x975/food.PNG" alt="Instant Image" class="img-fluid"></p>
+                      </div>
+                      <div class = "col-lg-3">
+                        <p><img src="assets/images/restaurant/800x975/food2.PNG" alt="Instant Image" class="img-fluid"></p>
+                      </div>
+                      
+                      <div class="col">
+                        <ul class="list-unstyled pb_food-menu">
+                          <li>
+                            <div class="row">
+                              <div class="col">
+                                <h3 class="pb_font-18 font-weight-bold">7 éléments identifiant un restaurant de New-York</h3>
+                                <p class="mb-0"> <i><b>"_id"</b></i> : identifiant unique du restaurant dans la base</p>
+                                <p class="mb-0"><i><b>"address"</b></i> : localise le restaurant (coordonnées gps, rue, numéro du bâtiment, code zip)</p>
+                                <p class="mb-0"><i><b>"borough"</b></i> : quartier où se situe le restaurant</p>
+                                <p class="mb-0"><i><b>"cuisine"</b></i> : type de cuisine du restaurant</p>
+                                <p class="mb-0"><i><b>"grades"</b></i> : notes données au restaurant avec la date ainsi que le score attribué</p>
+                                <p class="mb-0"><i><b>"name"</b></i> : nom du restaurant</p>
+                                <p class="mb-0"><i><b>"restaurant_id"</b></i> : identifiant du restaurant</p>
+
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="row">
+                              <div class="col">
+                                <h3 class="pb_font-18 font-weight-bold">Visualisation : via R/Python</h3>
+                                <p class="mb-0"> Avec R/python, nous allons --------.</p>
+                              </div>
+                            </div>
+                          </li>
+                                        
+                        </ul>
+                      </div>
+                    </div>
+                  </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="pb_md_py_cover text-center cover-bg-black cover-bg-opacity-4" style="background-image: url(assets/images/restaurant/1900x1200/visu.jpg)" id="section-home">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-9  order-md-1">
+            <h2 class="heading mb-3">Objectif des visualisations</h2>
+            <p class="sub-heading">Mettre en avant visuellement certaines particularités des bases de données afin de répondre à des problématiques.</p>
+          </div>  
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="pb_section" id="section-visualisation">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Visualisations</h2>
+            <p>Mettre en photo les visu</p>
+            <p>Quand on clique sur une visu :  lien vers la visu  </p>
+            <p>Juste la souris passe sur la visu : problematique </p>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card-columns">
+              <div class="card border-0 mb-4">
+                <h3  class="col text-center">doctolib</h3>
+                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="pb_hover-zoom">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_1.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"> Problématique  de la visite</i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <h3  class="col text-center">doctolib</h3>
+                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="pb_hover-zoom">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_1.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"> Problématique  de la visu</i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <h3  class="col text-center">doctolib</h3>
+                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="pb_hover-zoom">
+                  <img class="img-fluid" src="assets/images/restaurant/800x975/img_2.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"> Problématique  de la visu</i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <h3  class="col text-center">doctolib</h3>
+                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="pb_hover-zoom">
+                  <img class="img-fluid" src="assets/images/restaurant/1900x1200/img_1.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"> Problématique  de la visu</i>
+                </a>
+              </div>
+              <div class="card border-0 mb-4">
+                <h3  class="col text-center">doctolib</h3>
+                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="pb_hover-zoom">
+                  <img class="img-fluid" src="assets/images/restaurant/1900x1200/img_1.jpg" alt="Image caption here">
+                  <i class="ion-ios-search-strong icon"> Problématique  de la visu</i>
+                </a>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="pb_section cover-bg-grey cover-bg-opacity-3">
+      <div class="container">
+         <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Analyses des visualisations</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md">
+            <div class="media d-block text-center testimonial_v1 pb_quote_v1">
+              <div class="media-body">
+                <div class="quote pb_text-black">&ldquo;</div>
+                <blockquote class="mb-5 pb_font-20">Pour la visualisation de la base doctolib, on remarque qu'il est question de -------</blockquote>
+                <img class="d-flex text-center mx-auto mb-3 rounded-circle" src="assets/images/persons/doctolib.png" alt="Generic placeholder image">
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="media d-block text-center testimonial_v1 pb_quote_v1">
+              <div class="media-body">
+                <div class="quote pb_text-black">&ldquo;</div>
+                <blockquote class="mb-5 pb_font-20">Pour la visualisation de la base des publications scientifiques, on remarque qu'il est question de -------</blockquote>
+                <img class="d-flex text-center mx-auto mb-3 rounded-circle" src="assets/images/persons/publications.jpg" alt="Generic placeholder image">
+                
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="media d-block text-center testimonial_v1 pb_quote_v1">
+              
+              <div class="media-body">
+                <div class="quote pb_text-black">&ldquo;</div>
+                <blockquote class="mb-5 pb_font-20">Pour la visualisation de la base NYfood, on remarque qu'il est question de -------.</blockquote>
+                <img class="d-flex text-center mx-auto mb-3 rounded-circle" src="assets/images/persons/nyyy.jpg" alt="Generic placeholder image">
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="pb_section bg-light" id="section-analyses">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+            <h2 class="mb-4 text-uppercase pb_letter-spacing-2">Analyse des visualisations</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-deck">
+            <div class="card border-0">
+              <img class="card-img-top" src="assets/images/persons/doctolib.png" alt="Image caption here">
+              <div class="card-body pb_p-40">
+                <small class="text-uppercase pb_color-dark-opacity-3 font-weight-bold">---</small>
+                <h4 class="card-title"><a href="#" class="text-danger">Doctolib</a></h4>
+                <p class="card-text">Via le/les visualisation(s), on a pu remarquer de nombreuses..../p>
+              </div>
+            </div>
+            <div class="card border-0">
+              <img class="card-img-top" src="assets/images/persons/publications.jpg" alt="Image caption here">
+              <div class="card-body pb_p-40">
+                <small class="text-uppercase pb_color-dark-opacity-3 font-weight-bold">---</small>
+                <h4 class="card-title"><a href="#" class="text-danger">Publications scientifiques</a></h4>
+                <p class="card-text">Via le/les visualisation(s), on a pu remarquer de nombreuses...</p>
+              </div>
+            </div>
+            <div class="card border-0">
+              <img class="card-img-top" src="assets/images/persons/nyyy.jpg" alt="Image caption here">
+              <div class="card-body pb_p-40">
+                <small class="text-uppercase pb_color-dark-opacity-3 font-weight-bold">---</small>
+                <h4 class="card-title"><a href="#" class="text-danger">NYfood</a></h4>
+                <p class="card-text">Via le/les visualisation(s), on a pu remarquer de nombreuses...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- END section -->
+
+    <footer class="pb_footer bg-light" role="contentinfo">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="https://github.com/ndhennin" class="p-2"><i class="fa fa-github"></i> Nolwenn Dhennin</a></li>
+              <li class="list-inline-item"><a href="https://github.com/bgorteau" class="p-2"><i class="fa fa-github"></i> Baptiste Gorteau</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <p>&copy; 2017 Instant. All Rights Reserved. Designed by <a href="https://uicookies.com/">uiCookies</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="pb_loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#FDA04F"/></svg></div>
+    
+
+    <script src="assets/js/jquery.min.js"></script>
+    
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+    
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/magnific-popup-options.js"></script>
+  
+
+
+    <script src="assets/js/main.js"></script>
+    
+  </body>
+</html>
