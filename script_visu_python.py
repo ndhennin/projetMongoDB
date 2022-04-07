@@ -11,6 +11,7 @@ from bokeh.tile_providers import  get_provider, Vendors
 from bokeh.models import HoverTool, ColumnDataSource, ColorPicker, Legend
 from bokeh.models.widgets import Tabs, Panel
 from bokeh.layouts import row, column
+from bokeh.transform import factor_cmap
 
 db_uri = "mongodb+srv://etudiant:ur2@clusterm1.0rm7t.mongodb.net/"
 client = MongoClient(db_uri, tls=True, tlsAllowInvalidCertificates=True)
@@ -38,6 +39,7 @@ df_carte["centre"] = []
 df_carte["coordx"] = []
 df_carte["coordy"] = []
 df_carte["nb_creneau"] = []
+df_carte["nb_creau_1S"] = []
 
 
 def coor_wgs84_to_web_mercator(lon, lat):
@@ -52,8 +54,13 @@ for i in c :
     df_carte["coordx"].append(X)
     df_carte["coordy"].append(Y)
     df_carte["nb_creneau"].append(len(i['visit_motives']))
+    nb_1S = 0
+    for j in i['visit_motives']:
+        if j['first_shot_motive'] == True :
+            nb_1S += 1
+    df_carte["nb_creau_1S"].append(nb_1S)
 
-# Ajout de la couleur :
+# Ajout de la couleur toute dose :
 color = []
 for i in df_carte["nb_creneau"] :
     if i < 5 :
@@ -65,6 +72,18 @@ for i in df_carte["nb_creneau"] :
 
 df_carte['color'] = color
 
+# Ajout de la couleur première dose dose :
+color_1S = []
+for i in df_carte["nb_creau_1S"] :
+    if i < 2 :
+        color_1S.append('red')
+    if i >= 2 and i < 5 :
+        color_1S.append('orange')
+    if i >= 5 :
+        color_1S.append('green')
+
+df_carte['color_1S'] = color_1S
+
 df = pd.DataFrame(df_carte)
 print(df)
 source = ColumnDataSource(df)
@@ -74,6 +93,11 @@ p = figure(x_axis_type="mercator", y_axis_type="mercator", active_scroll="wheel_
 tile_provider = get_provider(Vendors.CARTODBPOSITRON)
 p.add_tile(tile_provider)
 
-p.triangle(x="coordx",y="coordy",source =source,size =10)
+p.triangle(x="coordx",y="coordy",source =source,size =10, color=factor_cmap('color', palette= ['red','orange','green'],factors=['red','orange','green']))
+
+hover_tool = HoverTool(tooltips=[('Nombre de creneaux disponibles', '@nb_creneau'),( 'Nom du centre', '@centre')]) 
+p.add_tools(hover_tool)
+
+
 
 show(p)
