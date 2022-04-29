@@ -1,0 +1,11 @@
+name: nyfood
+title:
+username:
+account: baptgorteau
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6201640
+bundleId: 5852096
+url: https://baptgorteau.shinyapps.io/nyfood/
+when: 1651253428.44302
+lastSyncTime: 1651253428.44304
